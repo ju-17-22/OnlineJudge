@@ -8,41 +8,33 @@ import * as $ from 'jquery';
   styleUrls: ['./onlineide.component.css']
 })
 export class OnlineideComponent implements OnInit {
-
-
-  new =null;
-  codeCollectorForm;
-  constructor(private httpclient: HttpClient) {
-    
-   }
-
-  ngOnInit() {
-	  this.codeCollectorForm = new FormGroup({
-	     value: new FormControl(""),
-	     input: new FormControl("")
-	  });
-  }
-  code= {
-    value: "",
-    input:""
-  };
+    new =null;
+    codeCollectorForm;
+    constructor(private httpclient: HttpClient){
+    }
+	ngOnInit() {
+		this.codeCollectorForm = new FormGroup({
+		    value: new FormControl(""),
+		    input: new FormControl("")
+		});
+	}
+	code = {
+	    value: "",
+	    input:""
+	};
    
-
 	onSubmit() {
-	   this.code=this.codeCollectorForm.value;
+	    this.code=this.codeCollectorForm.value;
 		let formData: FormData = new FormData();	
 		formData.append('value', this.code.value);
 		formData.append('input', this.code.input);
-	   this.httpclient.post("http://localhost:8000/onlineide/runcode",formData).subscribe(
-	   (data) => {
-	      let  output = JSON.parse(JSON.stringify(data));
-	      $('#output').val(output.object);
-	    
-	   }, error => {
+	    this.httpclient.post("http://localhost:8000/onlineide/runcode",formData).subscribe(
+	        (data) => {
+	        let  output = JSON.parse(JSON.stringify(data));
+	        $('#output').val(output.object);
+	    }, error => {
 	       let errorMsg = JSON.parse(JSON.stringify(error));
 	       $('#output').val(errorMsg.object);
-	    
-	    }
-	   );
+	    });
 	}
 }
