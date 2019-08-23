@@ -1,0 +1,24 @@
+version: '2.2'
+
+services:
+  server:
+    build: ./Online_Judge_server/.
+    command: bash -c "python3 Online_Judge_server/manage.py makemigrations && python3 Online_Judge_server/manage.py migrate && python3 Online_Judge_server/manage.py runserver 0.0.0.0:8000"
+    container_name: online_server
+    volumes:
+      - .:/online_server
+    environment:
+      FLASK_ENV: development
+    ports:
+      - "8000:8000"
+   
+  web:
+    build: ./OnlineJudgeWeb/.
+    command: bash -c "cd OnlineJudgeWeb && ng serve --port 4200 --host 0.0.0.0"
+    container_name: onlinejudeweb
+    volumes:
+      - .:/onlinejudeweb
+    environment:
+      FLASK_ENV: development
+    ports:
+      - "4200:4200"
