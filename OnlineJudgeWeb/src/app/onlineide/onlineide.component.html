@@ -5,15 +5,11 @@
   	<form [formGroup]="codeCollectorForm" (ngSubmit)="onSubmit()">
 	     <div class="row">
 	     	<div class="col-8">
-	     		<div class="row">
-
-		     		<label>Code</label>
-		     		<textarea rows="12" formControlName="value" class="form-control" id ="value">
-		     			
-		     		</textarea>
+	     	    <label>Code</label>
+	     		<div class = "code-editor" #codeEditor>
 	     	    </div>
-	     	    <div class="row">
-		     		<button id="submit" class="form-control" type ="submit"[disabled]="!codeCollectorForm.valid" >Run</button>
+	     	    <div class="row justify-content-center">
+		     		<button id="submit" class = "button" type ="submit"[disabled]="!codeCollectorForm.valid" >Run</button>
 	     	    </div>
 	     	</div>
 	     	<div class="col-4">
