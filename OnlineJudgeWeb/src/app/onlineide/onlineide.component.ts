@@ -51,6 +51,7 @@ export class OnlineideComponent implements OnInit {
 	    this.code=this.codeCollectorForm.value;
 		let formData: FormData = new FormData();	
 		formData.append('value', this.codeEditor.getValue());
+		if(this.code.input=="") this.code.input ="input";
 		formData.append('input', this.code.input);	    
 		this.httpclient.post("http://localhost:8000/onlineide/runcode",formData).subscribe(
 	        (data) => {
