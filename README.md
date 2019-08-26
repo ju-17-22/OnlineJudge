@@ -14,7 +14,15 @@
    ``` bash
    cd OnlineJudge
    ```
-
+- Enter OnlineJudgeWeb and run npm install.
+   ``` bash
+   cd OnlineJudgeWeb
+   npm install
+   ```
+- Go back to the previous directory.
+   ``` bash
+   cd ..
+   ```
 - Run the project using the docker-compose command.
 
    ``` bash
