@@ -18,7 +18,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    path(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('/',include("authentication.urls")),
     path('onlineide/',include('onlineide.urls'))
 
