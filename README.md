@@ -1,8 +1,7 @@
 # OnlineJudge
-**Starting Way**
-> https://angular.io/guide/quickstart  
-> https://angular-templates.io/tutorials/about/learn-angular-from-scratch-step-by-step
 
+<p> A project to judge solutions of programming problem. Mainly, It has two part. Server part and web part. Server side is implemented using django framework and application side is implemented using Angular 6.<p>
+ 
 
 ## How to install and run this projects?
 
@@ -32,3 +31,8 @@
    ``` bash
    docker-compose down
    ```
+   
+   
+  ###  For starting angular js, follow: 
+> https://angular.io/guide/quickstart  
+> https://angular-templates.io/tutorials/about/learn-angular-from-scratch-step-by-step
